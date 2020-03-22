@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const ObjectId = require('mongodb').ObjectId;
 
+
 router.get('/departments', (req, res) => {
   req.db.collection('departments').find().toArray((err, data) => {
     if(err) res.status(500).json({ message: err });
